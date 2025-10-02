@@ -181,8 +181,17 @@ class TextExtractor:
             text: Raw extracted text
 
         Returns:
-            Cleaned text
+            Cleaned text with normalized characters
         """
+        # Normalize Unicode characters (replace special bullets with standard dashes)
+        import re
+        import unicodedata
+
+        # Normalize Unicode to ASCII-safe characters
+        text = text.replace('\u25cf', '-')  # Replace bullet with dash
+        text = text.replace('\u2022', '-')  # Replace bullet with dash
+        text = text.replace('\u2023', '-')  # Replace triangular bullet with dash
+
         # Remove excessive whitespace
         lines = text.split('\n')
         cleaned_lines = []
@@ -197,7 +206,6 @@ class TextExtractor:
         cleaned_text = '\n'.join(cleaned_lines)
 
         # Remove multiple consecutive newlines
-        import re
         cleaned_text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
 
         return cleaned_text
