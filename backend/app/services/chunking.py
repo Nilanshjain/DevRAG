@@ -83,8 +83,22 @@ class DocumentChunker:
         Returns:
             List of Chunk objects
         """
-        if not text or len(text.strip()) < self.min_chunk_size:
+        if not text or len(text.strip()) < 10:  # Very minimal threshold
             return []
+
+        # If text is smaller than min_chunk_size, create a single chunk
+        if len(text.strip()) < self.min_chunk_size:
+            return [Chunk(
+                text=text.strip(),
+                chunk_id=f"{source_file}_chunk_0",
+                source_file=source_file,
+                chunk_index=0,
+                char_count=len(text.strip()),
+                word_count=len(text.strip().split()),
+                start_char=0,
+                end_char=len(text.strip()),
+                metadata={"strategy": "single_small_chunk"}
+            )]
 
         # Choose chunking method based on strategy
         if strategy == "fixed":
