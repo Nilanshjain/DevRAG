@@ -22,7 +22,7 @@ except ImportError:
 
 # For OpenAI embeddings (API required)
 try:
-    import openai
+    from openai import OpenAI
     OPENAI_AVAILABLE = True
 except ImportError:
     OPENAI_AVAILABLE = False
@@ -117,7 +117,8 @@ class EmbeddingService:
             if not api_key:
                 raise ValueError("OPENAI_API_KEY environment variable required for OpenAI embeddings")
 
-            openai.api_key = api_key
+            # Initialize OpenAI client
+            self.model = OpenAI(api_key=api_key)
             logger.info(f"OpenAI embeddings initialized with model: {self.model_name}")
 
         else:
@@ -227,13 +228,13 @@ class EmbeddingService:
             return embedding.tolist()
 
         elif self.provider == "openai":
-            # Use OpenAI API
+            # Use OpenAI API (v1.0+ syntax)
             try:
-                response = openai.Embedding.create(
+                response = self.model.embeddings.create(
                     model=self.model_name,
                     input=text
                 )
-                return response['data'][0]['embedding']
+                return response.data[0].embedding
 
             except Exception as e:
                 logger.error(f"OpenAI embedding generation failed: {e}")
@@ -251,13 +252,13 @@ class EmbeddingService:
             return [embedding.tolist() for embedding in embeddings]
 
         elif self.provider == "openai":
-            # OpenAI batch processing
+            # OpenAI batch processing (v1.0+ syntax)
             try:
-                response = openai.Embedding.create(
+                response = self.model.embeddings.create(
                     model=self.model_name,
                     input=texts
                 )
-                return [item['embedding'] for item in response['data']]
+                return [item.embedding for item in response.data]
 
             except Exception as e:
                 logger.error(f"OpenAI batch embedding generation failed: {e}")
@@ -339,11 +340,11 @@ def get_embedding_service() -> EmbeddingService:
     global embedding_service
 
     if embedding_service is None:
-        # Try sentence transformers first (no API required)
-        if SENTENCE_TRANSFORMERS_AVAILABLE:
-            embedding_service = EmbeddingService("sentence_transformers")
-        elif OPENAI_AVAILABLE and os.getenv("OPENAI_API_KEY"):
+        # Try OpenAI first if API key is available (no disk space needed for PyTorch)
+        if OPENAI_AVAILABLE and os.getenv("OPENAI_API_KEY"):
             embedding_service = EmbeddingService("openai")
+        elif SENTENCE_TRANSFORMERS_AVAILABLE:
+            embedding_service = EmbeddingService("sentence_transformers")
         else:
             raise RuntimeError(
                 "No embedding provider available. Install sentence-transformers or set OPENAI_API_KEY"
