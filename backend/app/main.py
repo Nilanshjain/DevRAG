@@ -3,7 +3,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import upload  # Import our upload router
+from app.api import upload, chat, metrics  # Import our routers
 
 # Create our FastAPI application instance
 # Think of this as creating our restaurant
@@ -76,6 +76,8 @@ async def get_info():
         }
     }
 
-# Include the upload router
-# This adds all the endpoints from upload.py to our main app
+# Include routers
+# This adds all the endpoints from our API modules to the main app
 app.include_router(upload.router)
+app.include_router(chat.router)
+app.include_router(metrics.router)
