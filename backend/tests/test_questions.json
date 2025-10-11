@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "document": "python_basics.md",
+    "question": "How do you define a function in Python?",
+    "expected_keywords": ["def", "keyword", "function", "return"],
+    "difficulty": "easy",
+    "category": "syntax"
+  },
+  {
+    "id": 2,
+    "document": "python_basics.md",
+    "question": "What are the three main numeric data types in Python?",
+    "expected_keywords": ["integers", "floats", "complex", "numbers"],
+    "difficulty": "easy",
+    "category": "data_types"
+  },
+  {
+    "id": 3,
+    "document": "python_basics.md",
+    "question": "How do you create a dictionary in Python and access its values?",
+    "expected_keywords": ["curly braces", "key-value", "bracket notation", "dictionary"],
+    "difficulty": "medium",
+    "category": "data_structures"
+  },
+  {
+    "id": 4,
+    "document": "python_basics.md",
+    "question": "Explain the difference between a for loop and a while loop in Python.",
+    "expected_keywords": ["iterate", "sequence", "condition", "range", "continues"],
+    "difficulty": "medium",
+    "category": "control_flow"
+  },
+  {
+    "id": 5,
+    "document": "python_basics.md",
+    "question": "What is the purpose of the __init__ method in a Python class?",
+    "expected_keywords": ["constructor", "initialize", "self", "attributes", "instance"],
+    "difficulty": "medium",
+    "category": "oop"
+  },
+  {
+    "id": 6,
+    "document": "python_basics.md",
+    "question": "How do you handle exceptions in Python?",
+    "expected_keywords": ["try", "except", "finally", "error", "exception"],
+    "difficulty": "easy",
+    "category": "error_handling"
+  },
+  {
+    "id": 7,
+    "document": "python_basics.md",
+    "question": "What is a list comprehension and how is it different from a regular loop?",
+    "expected_keywords": ["concise", "square brackets", "expression", "shorter", "list"],
+    "difficulty": "hard",
+    "category": "advanced"
+  },
+  {
+    "id": 8,
+    "document": "python_basics.md",
+    "question": "Explain lambda functions in Python and when to use them.",
+    "expected_keywords": ["anonymous", "single expression", "map", "simple", "operations"],
+    "difficulty": "medium",
+    "category": "functions"
+  },
+  {
+    "id": 9,
+    "document": "fastapi_guide.md",
+    "question": "What is FastAPI and what are its main advantages?",
+    "expected_keywords": ["fast", "modern", "type hints", "performance", "automatic documentation"],
+    "difficulty": "easy",
+    "category": "introduction"
+  },
+  {
+    "id": 10,
+    "document": "fastapi_guide.md",
+    "question": "How do you define path parameters in FastAPI?",
+    "expected_keywords": ["curly braces", "URL", "path", "@app.get", "parameter"],
+    "difficulty": "easy",
+    "category": "routing"
+  },
+  {
+    "id": 11,
+    "document": "fastapi_guide.md",
+    "question": "What is the purpose of Pydantic models in FastAPI?",
+    "expected_keywords": ["validation", "BaseModel", "request body", "type checking", "schema"],
+    "difficulty": "medium",
+    "category": "validation"
+  },
+  {
+    "id": 12,
+    "document": "fastapi_guide.md",
+    "question": "Explain dependency injection in FastAPI and how to use the Depends function.",
+    "expected_keywords": ["Depends", "reusable", "database", "yield", "injection"],
+    "difficulty": "hard",
+    "category": "dependencies"
+  },
+  {
+    "id": 13,
+    "document": "fastapi_guide.md",
+    "question": "How do you handle file uploads in FastAPI?",
+    "expected_keywords": ["UploadFile", "File", "await", "read", "async"],
+    "difficulty": "medium",
+    "category": "file_handling"
+  },
+  {
+    "id": 14,
+    "document": "fastapi_guide.md",
+    "question": "What is the purpose of background tasks in FastAPI?",
+    "expected_keywords": ["BackgroundTasks", "async", "response", "email", "non-critical"],
+    "difficulty": "medium",
+    "category": "async"
+  },
+  {
+    "id": 15,
+    "document": "fastapi_guide.md",
+    "question": "How do you enable CORS in a FastAPI application?",
+    "expected_keywords": ["CORSMiddleware", "allow_origins", "middleware", "cross-origin"],
+    "difficulty": "easy",
+    "category": "configuration"
+  },
+  {
+    "id": 16,
+    "document": "fastapi_guide.md",
+    "question": "When should you use async def versus regular def in FastAPI?",
+    "expected_keywords": ["I/O-bound", "CPU-bound", "async", "await", "operations"],
+    "difficulty": "hard",
+    "category": "performance"
+  },
+  {
+    "id": 17,
+    "document": "machine_learning.md",
+    "question": "What are the three main types of machine learning?",
+    "expected_keywords": ["supervised", "unsupervised", "reinforcement", "labeled", "learning"],
+    "difficulty": "easy",
+    "category": "fundamentals"
+  },
+  {
+    "id": 18,
+    "document": "machine_learning.md",
+    "question": "What is the difference between overfitting and underfitting?",
+    "expected_keywords": ["training", "test", "accuracy", "complex", "simple", "noise"],
+    "difficulty": "medium",
+    "category": "concepts"
+  },
+  {
+    "id": 19,
+    "document": "machine_learning.md",
+    "question": "Explain the bias-variance tradeoff in machine learning.",
+    "expected_keywords": ["bias", "variance", "underfitting", "overfitting", "balance"],
+    "difficulty": "hard",
+    "category": "theory"
+  },
+  {
+    "id": 20,
+    "document": "machine_learning.md",
+    "question": "What is the difference between precision and recall?",
+    "expected_keywords": ["true positives", "false positives", "false negatives", "predicted", "actual"],
+    "difficulty": "medium",
+    "category": "metrics"
+  },
+  {
+    "id": 21,
+    "document": "machine_learning.md",
+    "question": "How does a Random Forest algorithm work?",
+    "expected_keywords": ["ensemble", "decision trees", "voting", "multiple", "bootstrap"],
+    "difficulty": "medium",
+    "category": "algorithms"
+  },
+  {
+    "id": 22,
+    "document": "machine_learning.md",
+    "question": "What is K-Means clustering and how does it work?",
+    "expected_keywords": ["centroids", "clusters", "unsupervised", "distance", "iterations"],
+    "difficulty": "medium",
+    "category": "clustering"
+  },
+  {
+    "id": 23,
+    "document": "machine_learning.md",
+    "question": "What are common activation functions in neural networks?",
+    "expected_keywords": ["ReLU", "sigmoid", "tanh", "softmax", "activation"],
+    "difficulty": "medium",
+    "category": "neural_networks"
+  },
+  {
+    "id": 24,
+    "document": "machine_learning.md",
+    "question": "What is feature scaling and why is it important?",
+    "expected_keywords": ["standardization", "normalization", "mean", "range", "scale"],
+    "difficulty": "medium",
+    "category": "preprocessing"
+  },
+  {
+    "id": 25,
+    "document": "machine_learning.md",
+    "question": "Explain what data leakage is and why it's a problem.",
+    "expected_keywords": ["test data", "training", "validation", "contamination", "biased"],
+    "difficulty": "hard",
+    "category": "pitfalls"
+  }
+]
