@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 13% 13%;
+    --foreground: 210 6% 93%;
+    --card: 220 13% 11%;
+    --card-foreground: 210 6% 93%;
+    --popover: 220 13% 11%;
+    --popover-foreground: 210 6% 93%;
+    --primary: 25 20% 50%;
+    --primary-foreground: 210 6% 93%;
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 210 6% 93%;
+    --muted: 215 16% 25%;
+    --muted-foreground: 210 6% 70%;
+    --accent: 25 20% 50%;
+    --accent-foreground: 210 6% 93%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 6% 93%;
+    --border: 215 16% 35%;
+    --input: 215 16% 35%;
+    --ring: 25 20% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-br from-steel-900 via-metal-900 to-steel-800 text-foreground min-h-screen;
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(52, 58, 64, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6c757d, #495057);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #9c8578, #7f6f5f);
+}
+
+/* Typing indicator animation */
+@keyframes typing {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.typing-dot {
+  animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
