@@ -1,9 +1,6 @@
 # Claude Code files
 .claude/
 
-# Markdown files
-*.md
-
 # Python
 __pycache__/
 *.py[cod]
@@ -74,6 +71,10 @@ tmp/
 temp/
 *.tmp
 *.temp
+nul
+test.txt
+larger_test.txt
+*.test.txt
 
 # Node.js (if applicable)
 node_modules/
@@ -95,12 +96,26 @@ yarn-error.log*
 
 # Data files (often large/sensitive)
 data/
-*.csv
-*.json
-*.parquet
+
+# Project-specific uploads (keep directory, ignore contents except .gitkeep)
+backend/uploads/*.txt
+backend/uploads/*.pdf
+backend/uploads/*.md
+!backend/uploads/.gitkeep
+
+# Benchmark results
+backend/tests/benchmark_results_*.txt
+backend/tests/benchmark_results_*.json
+
+# React build
+frontend/build/
+frontend/.eslintcache
 
 # API keys and secrets
 secrets/
 credentials/
 *.pem
-*.key
+*.keyuploads/
+*.pyc
+__pycache__/
+*.pdf
