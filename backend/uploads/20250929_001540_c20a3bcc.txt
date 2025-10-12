@@ -1,3 +1,0 @@
-This is a test file for our RAG system.
-It contains some sample text that we'll use to test the file upload functionality.
-Learning to build APIs is fun!
